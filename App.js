@@ -1,14 +1,26 @@
 import { SafeAreaView, Text, View } from "react-native";
-import tailwind from "tailwind-rn";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from "./components/HomeScreen";
+
 
 export default function App() {
-  return (
-    <SafeAreaView style={tailwind("flex-1 items-center justify-center")}>
-      <View style={tailwind("bg-blue-500 px-5 py-3 rounded-full")}>
-        <Text style={tailwind("text-white font-semibold text-lg")}>
-          Hello Tailwind 👋
-        </Text>
-      </View>
-    </SafeAreaView>
+ 
+  const Stack = createNativeStackNavigator();
+
+  return ( 
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen 
+          name="Home" 
+          component={HomeScreen} 
+          options={{
+            headerShown: false,
+          }}
+         />
+        {/* <Stack.Screen name="Send" component={SendMoneyScreen} />
+        <Stack.Screen name="Cahback" component={CashbackScreen} /> */}
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
