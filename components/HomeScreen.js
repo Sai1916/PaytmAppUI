@@ -39,7 +39,19 @@ const HomeScreen = () => {
             <View style={tw('h-6 flex items-center bottom-2')}>
               <AntDesign name="minus" size={42} color="black" />
             </View>
-            <ScrollView>
+            <ScrollView style={tw('my-2')}>
+
+              <View style={tw('flex flex-col mx-4 my-2 px-3 py-1 border border-gray-200 rounded-xl')}>
+                <View style={tw('flex flex-row items-center justify-between ')}>
+                  <View style={tw('flex flex-col')}>
+                    <Text style={tw('text-sm font-bold')}>From Electricity to Internet!</Text>
+                    <Text style={tw('text-xs text-gray-500')}>All your Payments at one stop - Paytm!</Text>
+                  </View>
+                  <Entypo name="cross" size={24} color="red" />
+                </View>
+                <Image source={require('../assets/bgImage.png')} style={tw('w-24 h-16 self-end my-1')} />
+              </View>
+
               <View style={tw('flex flex-col mx-4 my-2 px-3 py-1 border border-gray-200 rounded-xl')}>
 
                 <View style={tw('flex flex-row justify-between')}>
@@ -72,7 +84,7 @@ const HomeScreen = () => {
                     <Text style={tw('text-xs font-bold')}>To Self</Text>
                   </View>
                   <View style={tw('flex flex-col items-center h-16 justify-between')}>
-                  <MaterialCommunityIcons name="bank-outline" size={32} color="#4a5e94" />
+                    <MaterialCommunityIcons name="bank-outline" size={32} color="#4a5e94" />
                     <Text style={tw('text-xs font-bold')}>To Bank A/c</Text>
                   </View>
                 </View>
@@ -144,22 +156,23 @@ const HomeScreen = () => {
                         <Text style={tw('text-xs font-bold top-1')}>Balance & History</Text>
                       </View>
                     </View>
-                    <View style={tw('flex flex-col items-center h-24 justify-between')}>
-                      <Image source={require('../assets/bhim_upi.png')} style={tw('w-10 h-10 bottom-3')} />
-                      <Image source={require('../assets/gift.png')} style={tw('w-4 h-4 absolute top-12 left-6')}/>
-                      <Text style={tw('text-xs font-bold bottom-4')}>Paytm Bank</Text>
+                    <View style={tw('flex flex-col items-center h-20 justify-between')}>
+                      <View style={tw('top-3')}>
+                        <MaterialCommunityIcons name="bank-outline" size={34} color="#4a5e94" />
+                      </View>
+                      <Text style={tw('text-xs font-bold bottom-2')}>Paytm Bank</Text>
                     </View>
-                    <View style={tw('flex flex-col items-center h-24 justify-between')}>
-                    <View style={tw('px-1 py-0.5 bg-yellow-300 rounded mb-1')}>
+                    <View style={tw('flex flex-col items-center h-24 w-16 justify-between')}>
+                      <View style={tw('px-1 py-0.5 bg-yellow-300 rounded')}>
                         <Text style={{fontSize: 9,fontWeight: 'bold'}}>Wow Days</Text>
                       </View>
-                        <MaterialIcons name="qr-code-scanner" size={34} color="#4a5e94" />
+                      <Image source={require('../assets/addMoney.png')} style={tw('w-11 h-11')} />
                       <View style={{flexDirection: 'row',wordBreak: "break-word",alignItems: 'center'}}>
-                        <Text style={tw('text-xs font-bold')}>Paytm Wallet</Text>
+                        <Text style={tw('text-xs font-bold ')}>Paytm Wallet</Text>
                       </View>
                     </View>
-                    <View style={tw('flex flex-col items-center h-20 w-16 justify-between')}>
-                      <Image source={require('../assets/addMoney.png')} style={tw('w-12 h-12')} />
+                    <View style={tw('flex flex-col items-center h-24 w-16 justify-between')}>
+                      <Image source={require('../assets/paytmPostpaid.webp')} style={tw('w-16 h-16')} resizeMode="contain" />
                       <View style={{flex:1,flexDirection: 'row',wordBreak: "break-word",alignItems: 'center',justifyContent: 'center'}}>
                         <Text style={tw('text-xs font-bold')}>Paytm Postpaid</Text>
                       </View>
@@ -168,13 +181,18 @@ const HomeScreen = () => {
                 </View>
 
                 <View style={tw('flex flex-row items-center justify-between px-2 py-2 bg-blue-50 rounded-b-xl')}>
-                  <View style={tw('flex flex-row items-center')} >
-                    <Text style={tw('text-xs')}>Choose any offer & get ₹10-100 cashback </Text>
-                    <Image source={require('../assets/money-bag.png')} style={tw('w-3 h-3')} />
-                  </View>
-                  <MaterialIcons name="keyboard-arrow-right" size={18} color="black" />
+                  <ScrollView horizontal>
+                    <View style={{backgroundColor:'white',paddingHorizontal:8,paddingVertical:3, borderRadius:14,marginHorizontal:3}}>
+                      <Text style={tw('text-sm font-bold')}>SBI - 1234</Text>
+                    </View>
+                    <View style={{backgroundColor:'white',paddingHorizontal:8,paddingVertical:3, borderRadius:14,marginHorizontal:3}}>
+                      <Text style={tw('text-sm font-bold')}>Paytm Bank - 5678</Text>
+                    </View>
+                    <View style={{backgroundColor:'white',paddingHorizontal:8,paddingVertical:3, borderRadius:14,marginHorizontal:3}}>
+                      <Text style={tw('text-sm font-bold')}>+ Link Bank A/c</Text>
+                    </View>
+                  </ScrollView>
                 </View>
-
               </View>
 
 
