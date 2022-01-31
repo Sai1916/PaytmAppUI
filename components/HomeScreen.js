@@ -1,10 +1,11 @@
-import { View, Text, Image, ScrollView } from 'react-native';
+import { View, Text, Image, ScrollView,TouchableOpacity } from 'react-native';
 import React from 'react';
 import tw from "tailwind-rn";
 import { AntDesign, Entypo, MaterialIcons, MaterialCommunityIcons,SimpleLineIcons } from '@expo/vector-icons'; 
 
-const HomeScreen = () => {
-  return (
+const HomeScreen = ({navigation}) => {
+
+  return ( 
     <View style={tw('flex-1 flex-col bg-blue-200')}>
       <View style={tw('flex flex-row items-center pt-9 px-5 justify-between')}>
         <View style={tw('mr-7')}>
@@ -71,10 +72,10 @@ const HomeScreen = () => {
                 </View>
                 
                 <View style={tw('flex flex-row py-4 items-center justify-between')}>
-                  <View style={tw('flex flex-col items-center h-16 justify-between')}>
+                  <TouchableOpacity style={tw('flex flex-col items-center h-16 justify-between')} onPress={() => navigation.navigate('Send')}>
                     <MaterialIcons name="qr-code-scanner" size={32} color="#4a5e94" />
                     <Text style={tw('text-xs font-bold')}>Scan & Pay</Text>
-                  </View>
+                  </TouchableOpacity>
                   <View style={tw('flex flex-col items-center h-16 justify-between')}>
                     <AntDesign name="contacts" size={32} color="#4a5e94" />
                     <Text style={tw('text-xs font-bold')}>To Mobile</Text>
